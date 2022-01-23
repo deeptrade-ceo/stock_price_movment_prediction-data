@@ -1,0 +1,25 @@
+    # Major hyperparameters that are very important for the performance.
+    #
+    # `beta` determines how much we accept the global index (Eq (5)).
+    parser.add_argument('--beta', type=float, default=1)  # [0.01, 0.1, 1]
+    # `decay` is used to prevent overfitting.
+    parser.add_argument('--decay', type=float, default=1)  # [0.01, 0.1, 1, 10]
+    # `window` is the length of time series inputs.
+    parser.add_argument('--window', type=int, default=10)  # [10, 15]
+
+    #
+    # Minor hyperparameters that are still important for the performance.
+    #
+    parser.add_argument('--epochs', type=int, default=150)
+    parser.add_argument('--units', type=int, default=64)
+    parser.add_argument('--lr', type=float, default=1e-3)
+
+    #
+    # Minor hyperparameters that typically have little effects.
+    #
+    parser.add_argument('--batch-size', type=int, default=128)
+    parser.add_argument('--patience', type=int, default=0)
+    parser.add_argument('--dropout', type=float, default=0.15)
+    parser.add_argument('--attn-heads', type=int, default=4)
+    parser.add_argument('--attn-layers', type=int, default=1)
+    parser.add_argument('--mlp-factor', type=int, default=4)
